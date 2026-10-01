@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Editor local · Comunidad Electrónica</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f7f5ef;color:#182e2b;font:16px/1.6 system-ui,sans-serif}main{max-width:880px;margin:40px auto;padding:0 24px}h1{line-height:1.15;font-size:34px;letter-spacing:-.035em}h2{font-size:22px}p{color:#626e66}section{border:1px solid #dedfd5;background:#fffefb;border-radius:12px;padding:24px;margin:24px 0}button,.file-label{background:#173d39;color:#fff;border:0;border-radius:7px;padding:12px 18px;font:600 14px system-ui;cursor:pointer;display:inline-block}button.secondary{background:#e7ecdf;color:#173d39}button.remove{background:#f3e3dc;color:#843b28;margin-top:15px}label{display:block;font-size:13px;font-weight:600;margin:15px 0 6px}input,textarea{width:100%;font:15px system-ui;padding:10px;border:1px solid #bdc7b4;border-radius:6px;color:#182e2b}textarea{min-height:85px;resize:vertical}input[type=checkbox]{width:auto;margin-right:8px}input[type=file]{border:0;padding:0}details{margin:20px 0;border-bottom:1px solid #dedfd5;padding-bottom:20px}summary{font-size:18px;font-weight:600;cursor:pointer}.record{padding:18px;background:#f5f5ed;border-radius:8px;margin:15px 0}.record h3{margin:0;font-size:17px}.status{padding:12px;background:#e7ecdf;border-radius:8px;margin-top:15px}.actions{display:flex;flex-wrap:wrap;gap:12px}.small{font-size:13px}[hidden]{display:none!important}:focus-visible{outline:3px solid #a44932;outline-offset:3px}
+</style></head><body><main><h1>Editor local de contenidos</h1><p>Comunidad Electrónica · ECyT-UNSAM</p><section><h2>1. Cargá el archivo actualizado</h2><p>Elegí <strong>contenido/sitio.json</strong> de la última versión del repositorio. Los cambios se realizan en esta ventana y se descargan como un archivo nuevo. No se guardan ni se publican automáticamente.</p><label for="source">Archivo sitio.json</label><input id="source" type="file" accept=".json,application/json"><p id="status" class="status" role="status">Esperando un archivo.</p></section><div id="editor" hidden><section><h2>2. Editá el contenido</h2><div id="general"></div><div id="collections"></div></section><section><h2>3. Guardá tus cambios</h2><p>Descargá el archivo y reemplazá <strong>contenido/sitio.json</strong> en la carpeta y en GitHub. Vercel regenerará el sitio al actualizar la rama de producción.</p><div class="actions"><button id="save" type="button">Descargar sitio.json</button></div><p class="small">Las páginas de una vista local se actualizan con <strong>npm run build</strong>. Cerrá esta ventana después de guardar: los cambios pendientes se perderán.</p></section></div></main><script>
+let data=null,dirty=false;
+const source=document.querySelector('#source'),status=document.querySelector('#status');
+const specs=[
+ ['noticias','Noticias',[['titulo','Título'],['fecha','Fecha','date'],['resumen','Resumen','textarea'],['enlace','Enlace HTTPS (opcional)','url']]],
+ ['electivas','Electivas',[['titulo','Nombre de la materia'],['periodo','Período, por ejemplo: 1º cuatrimestre 2027'],['descripcion','Descripción','textarea'],['requisitos','Requisitos'],['enlace','Enlace HTTPS (opcional)','url']]],
+ ['propuestasPFI','Propuestas de PFI',[['titulo','Título'],['descripcion','Descripción','textarea'],['entidad','Entidad'],['requisitos','Requisitos'],['enlace','Enlace HTTPS (opcional)','url']]],
+ ['propuestasPPS','Propuestas de PPS',[['titulo','Título'],['descripcion','Descripción','textarea'],['entidad','Entidad'],['requisitos','Requisitos'],['enlace','Enlace HTTPS (opcional)','url']]],
+ ['crea.actividades','Actividades de CREA',[['titulo','Título'],['descripcion','Descripción','textarea'],['entidad','Equipo / entidad'],['requisitos','Requisitos'],['enlace','Enlace HTTPS (opcional)','url']]]
+];
+const get=(key)=>key.split('.').reduce((a,k)=>a[k],data);
+function set(key,v){const keys=key.split('.');const last=keys.pop();keys.reduce((a,k)=>a[k],data)[last]=v;dirty=true;}
+function field(parent,name,label,value,type,onChange){
+ const id='field-'+crypto.randomUUID();const l=document.createElement('label');l.htmlFor=id;l.textContent=label;
+ const input=document.createElement(type==='textarea'?'textarea':'input');input.id=id;
+ if(type!=='textarea')input.type=type||'text';input.value=value||'';
+ input.addEventListener('input',()=>{onChange(input.value);dirty=true});parent.append(l,input);return input;
+}
+function show(){
+ const general=document.querySelector('#general');general.replaceChildren();
+ for(const [key,label,type] of [['nombre','Nombre del portal'],['correo','Correo de la carrera','email'],['whatsapp','Canal de WhatsApp','url'],['webOficial','Página institucional','url'],['foro','Enlace al foro (opcional)','url'],['crea.nombre','Nombre de CREA'],['crea.descripcion','Descripción de CREA','textarea'],['crea.instagram','Instagram de CREA','url']]){
+  field(general,key,label,get(key),type,v=>set(key,v));
+ }
+ const collections=document.querySelector('#collections');collections.replaceChildren();
+ for(const [key,label,fields] of specs){
+  const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent=label+' ('+get(key).length+')';details.append(summary);
+  for(const [index,item] of get(key).entries()){
+   const box=document.createElement('div');box.className='record';const heading=document.createElement('h3');heading.textContent='Elemento '+(index+1);box.append(heading);
+   for(const [name,title,type] of fields)field(box,name,title,item[name],type,v=>{item[name]=v});
+   const pub=document.createElement('label'),checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.checked=item.publicado===true;checkbox.addEventListener('change',()=>{item.publicado=checkbox.checked;dirty=true});pub.append(checkbox,'Publicado');box.append(pub);
+   const remove=document.createElement('button');remove.type='button';remove.className='remove';remove.textContent='Eliminar elemento';remove.addEventListener('click',()=>{if(confirm('¿Eliminar este elemento?')){get(key).splice(index,1);dirty=true;show();}});box.append(remove);details.append(box);
+  }
+  const add=document.createElement('button');add.className='secondary';add.type='button';add.textContent='Agregar';add.addEventListener('click',()=>{const item={publicado:false};fields.forEach(([k])=>item[k]='');if(key==='noticias')item.fecha=new Date().toISOString().slice(0,10);get(key).push(item);dirty=true;show();[...collections.querySelectorAll('details')].find(x=>x.querySelector('summary').textContent.startsWith(label)).open=true;});details.append(add);collections.append(details);
+ }
+ document.querySelector('#editor').hidden=false;
+}
+source.addEventListener('change',async()=>{
+ const file=source.files[0];if(!file)return;
+ if(dirty&&!confirm('Hay cambios pendientes. ¿Cargar otro archivo y descartarlos?'))return;
+ try{
+  const parsed=JSON.parse(await file.text());
+  if(typeof parsed.nombre!=='string'||typeof parsed.correo!=='string'||!parsed.crea||!Array.isArray(parsed.documentosPPS))throw Error('El archivo no tiene la estructura de sitio.json.');
+  for(const key of ['noticias','electivas','propuestasPFI','propuestasPPS'])if(!Array.isArray(parsed[key]))throw Error('Falta la colección '+key);
+  if(!Array.isArray(parsed.crea.actividades))throw Error('Faltan las actividades de CREA.');
+  data=parsed;dirty=false;show();status.textContent='Archivo cargado: '+file.name+'. Podés editarlo y descargar una nueva versión.';
+ }catch(e){status.textContent='No se pudo cargar: '+e.message;}
+});
+document.querySelector('#save').addEventListener('click',()=>{
+ try{
+  for(const key of ['whatsapp','webOficial','crea.instagram','foro']){const v=get(key);if(v&&!v.startsWith('https://'))throw Error('El campo '+key+' debe usar HTTPS.');}
+  for(const [key] of specs)for(const item of get(key)){
+   if(item.publicado&&!item.titulo.trim())throw Error('Falta un título publicado en '+key);
+   if(item.enlace&&!item.enlace.startsWith('https://'))throw Error('Hay un enlace sin HTTPS en '+key);
+   if(key==='noticias'&&item.publicado&&!/^\d{4}-\d{2}-\d{2}$/.test(item.fecha))throw Error('Una noticia publicada necesita fecha.');
+  }
+  const blob=new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='sitio.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);dirty=false;status.textContent='Archivo descargado. Reemplazá contenido/sitio.json y actualizalo en GitHub para publicar los cambios.';
+ }catch(e){status.textContent=e.message;status.scrollIntoView({behavior:'smooth'});}
+});
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+</script></body></html>

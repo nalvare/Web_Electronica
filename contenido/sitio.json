@@ -1,0 +1,26 @@
+{
+  "nombre": "Comunidad Electrónica UNSAM",
+  "institucion": "Ingeniería Electrónica · ECyT-UNSAM",
+  "correo": "ECyT.electronica@unsam.edu.ar",
+  "whatsapp": "https://whatsapp.com/channel/0029Vajj3vNI7BeLzGjc5w1A",
+  "webOficial": "https://www.unsam.edu.ar/escuelas/ecyt/89/ciencia/ingenieria-electronica",
+  "crea": {
+    "nombre": "Club de Robótica y Electrónica Aplicada",
+    "descripcion": "Espacio creado y gestionado por alumnos de la ECyT-UNSAM. Aprendizaje teórico-práctico mediante proyectos.",
+    "instagram": "https://www.instagram.com/crea.ecyt.unsam/",
+    "actividades": []
+  },
+  "noticias": [],
+  "electivas": [],
+  "propuestasPFI": [],
+  "propuestasPPS": [],
+  "documentosPFI": [],
+  "documentosPlan": [],
+  "foro": "",
+  "documentosPPS": [
+    {"titulo": "Reglamento de PPS", "descripcion": "Requisitos, tutoría, admisión y aprobación. Artículos 1 a 11.", "archivo": "documentos/pps-reglamento-v02.doc", "version": "V02"},
+    {"titulo": "Ficha de admisión", "descripcion": "Datos del estudiante y la entidad, actividades y competencias. Anexo 1.", "archivo": "documentos/pps-ficha-admision-v02.doc", "version": "V02"},
+    {"titulo": "Pautas del informe final", "descripcion": "Estructura, extensión, formato y modelo de portada. Anexo 2.", "archivo": "documentos/pps-pautas-informe-v02.doc", "version": "V02"},
+    {"titulo": "Ficha de evaluación", "descripcion": "Evaluación de competencias a completar por el tutor. Anexo 3.", "archivo": "documentos/pps-ficha-evaluacion-v02.doc", "version": "V02"}
+  ]
+}
