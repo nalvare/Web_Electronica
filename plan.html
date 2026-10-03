@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="es-AR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Información y comunidad para estudiantes de Ingeniería Electrónica de la ECyT-UNSAM. Plan de estudios, PPS, PFI, electivas y CREA."
+        />
+        <meta name="theme-color" content="#173d39" />
+        <title>Planes y cursada · Comunidad Electrónica UNSAM</title>
+        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+        <link rel="stylesheet" href="assets/styles.css" />
+        <style>
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+        </style>
+        <script src="assets/app.js" defer></script>
+    </head>
+    <body>
+        <a class="skip" href="#main">Saltar al contenido</a>
+        <aside class="sidebar">
+            <a class="brand" href="index.html" aria-label="Comunidad Electrónica, inicio"
+                ><span class="brand-mark" aria-hidden="true">IE</span
+                ><span class="brand-copy">Comunidad<br />Electrónica<small>ECyT · UNSAM</small></span></a
+            ><button
+                class="mobile-menu"
+                data-menu
+                aria-controls="navigation"
+                aria-expanded="false"
+                aria-label="Abrir o cerrar navegación"
+            >
+                <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+            </button>
+            <p class="nav-label">Tu carrera</p>
+            <nav id="navigation" class="nav-links" aria-label="Navegación principal">
+                <a href="index.html"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="m3 10 9-7 9 7v11h-6v-7H9v7H3z" /></svg
+                    >Inicio</a
+                ><a href="bienvenida.html"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.5 5.5l2 2m9 9 2 2m0-13-2 2m-9 9-2 2" />
+                        <circle cx="12" cy="12" r="4" /></svg
+                    >Bienvenida</a
+                ><a href="plan.html" aria-current="page"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5" /></svg
+                    >Planes y cursada</a
+                ><a href="electivas.html"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M3 5h7l2 3h9v12H3zM7 12h10m-10 4h6" /></svg
+                    >Electivas</a
+                ><a href="pps.html"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <rect x="3" y="7" width="18" height="14" rx="2" />
+                        <path d="M8 7V3h8v4M3 13h18m-11 0v3h4v-3" /></svg
+                    >PPS</a
+                ><a href="pfi.html"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="m12 3 8 4v10l-8 4-8-4V7zM4 7l8 5 8-5m-8 5v9" /></svg
+                    >PFI</a
+                ><a href="crea.html"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <rect x="5" y="7" width="14" height="13" rx="3" />
+                        <path d="M12 3v4M2 12h3m14 0h3M9 16h6" />
+                        <circle cx="9" cy="11" r=".7" />
+                        <circle cx="15" cy="11" r=".7" /></svg
+                    >CREA</a
+                ><a href="comunidad.html"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <circle cx="9" cy="7" r="3" />
+                        <path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m4 11v-3a6 6 0 0 0-4-5" /></svg
+                    >Comunidad</a
+                >
+            </nav>
+            <div class="side-contact">
+                <p>Mantenete en contacto</p>
+                <a
+                    class=""
+                    href="https://whatsapp.com/channel/0029Vajj3vNI7BeLzGjc5w1A"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5a9 9 0 1 1 16-5z" />
+                        <path d="M8 11h8" /></svg
+                    >Canal de WhatsApp<svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M13 3h8v8m0-8L10 14M10 3H3v18h18v-7" /></svg></a
+                ><a href="mailto:ECyT.electronica@unsam.edu.ar"
+                    ><svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="m3 6 9 7 9-7" /></svg
+                    >Escribí a la carrera</a
+                >
+            </div>
+        </aside>
+        <div class="workspace">
+            <div class="topbar">
+                <span>Ingeniería Electrónica / Planes y cursada</span
+                ><a
+                    class=""
+                    href="https://www.unsam.edu.ar/escuelas/ecyt/89/ciencia/ingenieria-electronica"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Web institucional<svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M13 3h8v8m0-8L10 14M10 3H3v18h18v-7" /></svg
+                ></a>
+            </div>
+            <main id="main" class="main" tabindex="-1">
+                <header class="page-head">
+                    <div class="eyebrow">Planes y cursada</div>
+                    <h1>Tu recorrido en la carrera.</h1>
+                    <p>
+                        Consultá las materias y correlativas del plan publicado por la ECyT. Para tu inscripción,
+                        verificá siempre tu situación en SIU Guaraní.
+                    </p>
+                </header>
+                <div class="facts">
+                    <div class="fact"><strong>11</strong><span>cuatrimestres del plan publicado</span></div>
+                    <div class="fact"><strong>4.240 h</strong><span>carga total publicada</span></div>
+                    <div class="fact"><strong>Presencial</strong><span>modalidad</span></div>
+                </div>
+                <div class="note">
+                    <strong>Fuente: página institucional de la carrera.</strong> Consulta: 1 de octubre de 2026. Las
+                    correlativas aparecen como códigos; esta vista no distingue condiciones de regularización y
+                    aprobación ni calcula habilitación para cursar.
+                    <a
+                        class=""
+                        href="https://www.unsam.edu.ar/escuelas/ecyt/89/ciencia/ingenieria-electronica"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Consultar la fuente ↗<svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M13 3h8v8m0-8L10 14M10 3H3v18h18v-7" /></svg
+                    ></a>
+                </div>
+                <section class="section">
+                    <div class="section-heading">
+                        <h2>Materias por cuatrimestre</h2>
+                        <span id="subject-count" class="small">42 materias</span>
+                    </div>
+                    <div class="filters" data-filters hidden>
+                        <div class="search">
+                            <label for="subject-search">Buscar por materia o código</label
+                            ><input
+                                id="subject-search"
+                                type="search"
+                                placeholder="Por ejemplo: Teoría de Circuitos"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div>
+                            <label for="semester">Cuatrimestre</label
+                            ><select id="semester">
+                                <option value="">Todos</option>
+                                <option value="1">1º cuatrimestre</option>
+                                <option value="2">2º cuatrimestre</option>
+                                <option value="3">3º cuatrimestre</option>
+                                <option value="4">4º cuatrimestre</option>
+                                <option value="5">5º cuatrimestre</option>
+                                <option value="6">6º cuatrimestre</option>
+                                <option value="7">7º cuatrimestre</option>
+                                <option value="8">8º cuatrimestre</option>
+                                <option value="9">9º cuatrimestre</option>
+                                <option value="10">10º cuatrimestre</option>
+                                <option value="11">11º cuatrimestre</option>
+                            </select>
+                        </div>
+                        <button data-clear type="button">Limpiar</button>
+                    </div>
+                    <p id="no-subjects" role="status" hidden>No se encontraron materias con esa búsqueda.</p>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 1</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 1
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="1">
+                                        <td class="code">CB01</td>
+                                        <td>Introducción al Análisis Matemático</td>
+                                        <td>128 h</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr data-subject data-semester="1">
+                                        <td class="code">CB02</td>
+                                        <td>Ciencia, Tecnología y Sociedad</td>
+                                        <td>64 h</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr data-subject data-semester="1">
+                                        <td class="code">CB03</td>
+                                        <td>Química General</td>
+                                        <td>128 h</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr data-subject data-semester="1">
+                                        <td class="code">CB36</td>
+                                        <td>Introducción a la Informática</td>
+                                        <td>64 h</td>
+                                        <td>—</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 2</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 2
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="2">
+                                        <td class="code">CB05</td>
+                                        <td>Cálculo I</td>
+                                        <td>96 h</td>
+                                        <td>CB01</td>
+                                    </tr>
+                                    <tr data-subject data-semester="2">
+                                        <td class="code">CB06</td>
+                                        <td>Álgebra y Geometría Analítica I</td>
+                                        <td>96 h</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr data-subject data-semester="2">
+                                        <td class="code">CB10</td>
+                                        <td>Física I</td>
+                                        <td>128 h</td>
+                                        <td>CB01</td>
+                                    </tr>
+                                    <tr data-subject data-semester="2">
+                                        <td class="code">CB37</td>
+                                        <td>Sistemas de Representación Gráfica</td>
+                                        <td>64 h</td>
+                                        <td>CB36</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 3</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 3
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="3">
+                                        <td class="code">CB09</td>
+                                        <td>Cálculo II</td>
+                                        <td>128 h</td>
+                                        <td>CB05 · CB06</td>
+                                    </tr>
+                                    <tr data-subject data-semester="3">
+                                        <td class="code">CB08</td>
+                                        <td>Álgebra y Geometría Analítica II</td>
+                                        <td>64 h</td>
+                                        <td>CB06</td>
+                                    </tr>
+                                    <tr data-subject data-semester="3">
+                                        <td class="code">CB13</td>
+                                        <td>Física II</td>
+                                        <td>128 h</td>
+                                        <td>CB05 · CB10</td>
+                                    </tr>
+                                    <tr data-subject data-semester="3">
+                                        <td class="code">CB29</td>
+                                        <td>Informática</td>
+                                        <td>64 h</td>
+                                        <td>CB36</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 4</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 4
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="4">
+                                        <td class="code">CB30</td>
+                                        <td>Cálculo III</td>
+                                        <td>128 h</td>
+                                        <td>CB08 · CB09</td>
+                                    </tr>
+                                    <tr data-subject data-semester="4">
+                                        <td class="code">CB34</td>
+                                        <td>Probabilidad y Estadística</td>
+                                        <td>64 h</td>
+                                        <td>CB09</td>
+                                    </tr>
+                                    <tr data-subject data-semester="4">
+                                        <td class="code">CB15</td>
+                                        <td>Física III</td>
+                                        <td>128 h</td>
+                                        <td>CB09 · CB13</td>
+                                    </tr>
+                                    <tr data-subject data-semester="4">
+                                        <td class="code">CB39</td>
+                                        <td>Programación</td>
+                                        <td>64 h</td>
+                                        <td>CB06 · CB29</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 5</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 5
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="5">
+                                        <td class="code">CB31</td>
+                                        <td>Física IV</td>
+                                        <td>128 h</td>
+                                        <td>CB15</td>
+                                    </tr>
+                                    <tr data-subject data-semester="5">
+                                        <td class="code">COM01</td>
+                                        <td>Medios de Enlace</td>
+                                        <td>64 h</td>
+                                        <td>CB15 · CB30</td>
+                                    </tr>
+                                    <tr data-subject data-semester="5">
+                                        <td class="code">ELE01</td>
+                                        <td>Teoría de Circuitos</td>
+                                        <td>128 h</td>
+                                        <td>CB09 · CB15</td>
+                                    </tr>
+                                    <tr data-subject data-semester="5">
+                                        <td class="code">CB35</td>
+                                        <td>Métodos Numéricos</td>
+                                        <td>64 h</td>
+                                        <td>CB08 · CB09</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 6</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 6
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="6">
+                                        <td class="code">ELE02</td>
+                                        <td>Dispositivos Electrónicos</td>
+                                        <td>128 h</td>
+                                        <td>CB15 · ELE01</td>
+                                    </tr>
+                                    <tr data-subject data-semester="6">
+                                        <td class="code">COM02</td>
+                                        <td>Teoría de las Comunicaciones</td>
+                                        <td>64 h</td>
+                                        <td>COM01</td>
+                                    </tr>
+                                    <tr data-subject data-semester="6">
+                                        <td class="code">ELE04</td>
+                                        <td>Análisis y Procesamiento de Señales</td>
+                                        <td>128 h</td>
+                                        <td>CB34 · CB35 · ELE01</td>
+                                    </tr>
+                                    <tr data-subject data-semester="6">
+                                        <td class="code">ELE03</td>
+                                        <td>Medidas I</td>
+                                        <td>64 h</td>
+                                        <td>ELE01</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 7</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 7
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="7">
+                                        <td class="code">ELE06</td>
+                                        <td>Electrónica Digital I</td>
+                                        <td>128 h</td>
+                                        <td>CB39 · ELE02</td>
+                                    </tr>
+                                    <tr data-subject data-semester="7">
+                                        <td class="code">ELE05</td>
+                                        <td>Medidas II</td>
+                                        <td>64 h</td>
+                                        <td>ELE02 · ELE03</td>
+                                    </tr>
+                                    <tr data-subject data-semester="7">
+                                        <td class="code">ELE07</td>
+                                        <td>Electrónica Analógica I</td>
+                                        <td>128 h</td>
+                                        <td>ELE02 · ELE04</td>
+                                    </tr>
+                                    <tr data-subject data-semester="7">
+                                        <td class="code">CMP01</td>
+                                        <td>Higiene, Seguridad Ambiental y Laboral</td>
+                                        <td>64 h</td>
+                                        <td>CB03 · ELE03</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 8</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 8
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="8">
+                                        <td class="code">ELE08</td>
+                                        <td>Electrónica Digital II</td>
+                                        <td>128 h</td>
+                                        <td>ELE06</td>
+                                    </tr>
+                                    <tr data-subject data-semester="8">
+                                        <td class="code">ELE10</td>
+                                        <td>Electrotecnia</td>
+                                        <td>64 h</td>
+                                        <td>ELE05</td>
+                                    </tr>
+                                    <tr data-subject data-semester="8">
+                                        <td class="code">ELE09</td>
+                                        <td>Electrónica Analógica II</td>
+                                        <td>128 h</td>
+                                        <td>ELE07</td>
+                                    </tr>
+                                    <tr data-subject data-semester="8">
+                                        <td class="code">ELE11</td>
+                                        <td>Sensores, Acondicionadores de Señales y Adquisición de Datos</td>
+                                        <td>64 h</td>
+                                        <td>ELE05 · ELE06 · ELE07</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 9</h2>
+                            <span>4 materias · 384 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 9
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="9">
+                                        <td class="code">ELE12</td>
+                                        <td>Teoría de Control</td>
+                                        <td>128 h</td>
+                                        <td>ELE09 · ELE10</td>
+                                    </tr>
+                                    <tr data-subject data-semester="9">
+                                        <td class="code">ELE13</td>
+                                        <td>Electrónica Digital III</td>
+                                        <td>64 h</td>
+                                        <td>ELE08 · ELE11</td>
+                                    </tr>
+                                    <tr data-subject data-semester="9">
+                                        <td class="code">—</td>
+                                        <td>Electiva 1</td>
+                                        <td>128 h</td>
+                                        <td>Consultar oferta</td>
+                                    </tr>
+                                    <tr data-subject data-semester="9">
+                                        <td class="code">CMP05</td>
+                                        <td>Economía</td>
+                                        <td>64 h</td>
+                                        <td>CMP01</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 10</h2>
+                            <span>3 materias · 392 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 10
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="10">
+                                        <td class="code">COM03</td>
+                                        <td>Organización Industrial</td>
+                                        <td>64 h</td>
+                                        <td>CMP01</td>
+                                    </tr>
+                                    <tr data-subject data-semester="10">
+                                        <td class="code">—</td>
+                                        <td>Electiva 2</td>
+                                        <td>128 h</td>
+                                        <td>Consultar oferta</td>
+                                    </tr>
+                                    <tr data-subject data-semester="10">
+                                        <td class="code">PPIE</td>
+                                        <td>Práctica Profesional Supervisada</td>
+                                        <td>200 h</td>
+                                        <td>CMP01 · ELE08 · ELE12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="plan-group" data-semester-group>
+                        <header class="semester-head">
+                            <h2>Cuatrimestre 11</h2>
+                            <span>3 materias · 392 h</span>
+                        </header>
+                        <div class="table-wrap">
+                            <table>
+                                <caption class="sr-only">
+                                    Materias del cuatrimestre 11
+                                </caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Materia</th>
+                                        <th scope="col">Carga total</th>
+                                        <th scope="col">Correlativas publicadas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-subject data-semester="11">
+                                        <td class="code">COM04</td>
+                                        <td>Ética y Ejercicio Profesional</td>
+                                        <td>64 h</td>
+                                        <td>CMP01</td>
+                                    </tr>
+                                    <tr data-subject data-semester="11">
+                                        <td class="code">—</td>
+                                        <td>Electiva 3</td>
+                                        <td>128 h</td>
+                                        <td>Consultar oferta</td>
+                                    </tr>
+                                    <tr data-subject data-semester="11">
+                                        <td class="code">PFIE</td>
+                                        <td>Proyecto Final Integrador</td>
+                                        <td>200 h</td>
+                                        <td>ELE11 · ELE12 · ELE13 · CMP05 · COM03</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+                <div class="note">
+                    <strong>Inglés técnico.</strong> El plan publicado establece una prueba de suficiencia en inglés
+                    técnico escrito al finalizar el tercer año. Consultá con la carrera cómo acreditar este requisito.
+                </div>
+                <section class="section">
+                    <div class="section-heading"><h2>Nuevo plan y transición</h2></div>
+                    <p class="muted">
+                        Los documentos del nuevo plan y las equivalencias se incorporarán a este espacio. Para consultar
+                        qué corresponde a tu situación, escribí a la carrera.
+                    </p>
+                    <div class="buttons">
+                        <a
+                            class="button secondary"
+                            href="mailto:ECyT.electronica@unsam.edu.ar?subject=Consulta%20sobre%20nuevo%20plan%20y%20transici%C3%B3n"
+                            >Consultar a la carrera<svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path d="m3 6 9 7 9-7" /></svg
+                        ></a>
+                    </div>
+                </section>
+                <div class="callout">
+                    <h3>Planificador de trayectorias</h3>
+                    <p>
+                        Más adelante podrás explorar tu recorrido a partir de las materias aprobadas y las reglas de
+                        transición. Mientras tanto, esta página permite consultar y buscar materias del plan publicado.
+                    </p>
+                </div>
+                <footer class="footer">
+                    <div>
+                        <strong>Ingeniería Electrónica · ECyT-UNSAM</strong>
+                        <p>
+                            Espacio impulsado desde la carrera para informar y generar comunidad, alojado fuera del
+                            servidor institucional.
+                        </p>
+                    </div>
+                    <div class="footer-right">
+                        <a href="mailto:ECyT.electronica@unsam.edu.ar">Contacto con la carrera</a>
+                        <p>Comunidad Electrónica · UNSAM</p>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </body>
+</html>
